@@ -57,7 +57,7 @@ fi
 currentPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "Checking missing modules in path: ${path}"
-missingModules=( $("${currentPath}/../ops/modules-diff-local.sh" -w "${path}" -u "${webUser}" -g "${webGroup}" -m -q) )
+missingModules=( $("${currentPath}/../ops/modules-diff/web-server.sh" -w "${path}" -u "${webUser}" -g "${webGroup}" -m -q) )
 if [[ "${#missingModules[@]}" -gt 0 ]]; then
   echo "Found missing module(s): ${missingModules[*]}"
   "${currentPath}/../ops/generated-clean.sh"
@@ -67,7 +67,7 @@ else
 fi
 
 echo "Checking unknown modules in path: ${path}"
-unknownModules=( $("${currentPath}/../ops/modules-diff-local.sh" -w "${path}" -u "${webUser}" -g "${webGroup}" -n -q) )
+unknownModules=( $("${currentPath}/../ops/modules-diff/web-server.sh" -w "${path}" -u "${webUser}" -g "${webGroup}" -k -q) )
 if [[ "${#unknownModules[@]}" -gt 0 ]]; then
   cd "${path}"
   echo "Activate module(s): ${unknownModules[*]}"
