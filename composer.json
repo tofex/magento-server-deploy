@@ -1,13 +1,13 @@
 {
-  "name": "tofex/magento-server-deploy",
-  "version": "1.0.2",
-  "type": "magento-server-component",
-  "description": "Tofex Magento Server Deploy",
-  "license": "MIT",
-  "require": {
-    "php": ">=7.0"
-  },
-  "extra": {
-    "installer-name": "deploy"
-  }
+    "name": "tofex/magento-server-deploy",
+    "version": "1.0.3",
+    "type": "magento-server-component",
+    "description": "Tofex Magento Server Deploy",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.0"
+    },
+    "extra": {
+        "installer-name": "deploy"
+    }
 }

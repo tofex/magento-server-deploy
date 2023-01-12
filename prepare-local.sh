@@ -26,7 +26,7 @@ trim()
 path=
 webUser=
 webGroup=
-phpExecutable="php"
+phpExecutable=
 
 while getopts hp:u:g:e:? option; do
   case ${option} in
@@ -52,6 +52,10 @@ fi
 currentGroup=$(id -g -n)
 if [[ -z "${webGroup}" ]]; then
   webGroup="${currentGroup}"
+fi
+
+if [[ -z "${phpExecutable}" ]]; then
+  phpExecutable="php"
 fi
 
 currentPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
