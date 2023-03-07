@@ -102,7 +102,7 @@ if [[ -n "${phpExecutable}" ]]; then
   if [[ -n "${memoryLimit}" ]]; then
     "${currentPath}/../ops/database-upgrade.sh" \
       -b "${phpExecutable}" \
-      -m "${memoryLimit}"
+      -i "${memoryLimit}"
   else
     "${currentPath}/../ops/database-upgrade.sh" \
       -b "${phpExecutable}"
@@ -110,7 +110,7 @@ if [[ -n "${phpExecutable}" ]]; then
 else
   if [[ -n "${memoryLimit}" ]]; then
     "${currentPath}/../ops/database-upgrade.sh" \
-      -m "${memoryLimit}"
+      -i "${memoryLimit}"
   else
     "${currentPath}/../ops/database-upgrade.sh"
   fi
